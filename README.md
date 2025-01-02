@@ -1,3 +1,7 @@
+# Kubernetes
+
+Kubernetes, or K8s for short, is an open-source container-orchestration tool designed by Google. It’s used for bundling and managing clusters of containerized applications — a process known as ‘orchestration’ in the computing world.
+
 # Kubernetes Concepts: Container, Pod, and Deployment
 
 This document explains the differences between **Container**, **Pod**, and **Deployment** in Kubernetes.
