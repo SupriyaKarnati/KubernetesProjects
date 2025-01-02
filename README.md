@@ -27,3 +27,75 @@ This document explains the differences between **Container**, **Pod**, and **Dep
 | **Self-Healing**           | Automatically replaces Pods in the event of failure, ensuring the desired state is maintained.                   | Ensures that the correct number of Pods are running but does not handle application updates or rollbacks.         |
 | **Declarative Management** | Supports declarative management, allowing users to define the desired state for both Pods and updates.           | Is declarative, but its management is focused solely on the number of Pods, not application-level management.     |
 
+# Kubernetes Service Types
+
+This document explains the different types of Kubernetes services, their usage, and how they differ from one another.
+
+## 1. ClusterIP
+
+### Description:
+- **ClusterIP** is the default service type in Kubernetes.
+- It assigns a **private IP address** to the service, which is **only accessible within the Kubernetes cluster**.
+
+### Access:
+- Only other services inside the same cluster can access this service.
+
+### Use Cases:
+- Communication between different parts of your application within the same cluster.
+- Example: Front-end service talking to back-end service.
+
+### Image Example:
+![ClusterIP](https://github.com/SupriyaKarnati/KubernetesProjects/blob/main/ClusterIP.png?raw=true)
+
+---
+
+## 2. NodePort
+
+### Description:
+- **NodePort** is an extension of the **ClusterIP** service type.
+- It exposes the service to the **outside world** by opening a specific port on each **node** in the cluster.
+- You can access the service from outside the cluster using `<NodeIP>:<NodePort>`.
+
+### Access:
+- External traffic can reach your service by connecting to a node's IP and the assigned port.
+
+### Port Range:
+- The NodePort port range is **30000-32767**. Kubernetes will automatically assign a port, but you can also manually choose a port within this range.
+
+### Use Cases:
+- When you want to expose your service outside the cluster.
+- Useful for custom load balancing or environments not fully supported by Kubernetes.
+
+### Image Example:
+![NodePort](images/nodeport-example.png)
+
+---
+
+## 3. LoadBalancer
+
+### Description:
+- **LoadBalancer** is an extension of the **NodePort** service type.
+- It integrates with cloud providers (like AWS, GCP, Azure) to create an external **load balancer** for your service.
+- A cloud provider will automatically set up the load balancer and assign it a public IP address.
+
+### Access:
+- The load balancer automatically distributes traffic to the backend Pods of your service, and you can access the service via a cloud-provided IP.
+
+### Use Cases:
+- When you are using a cloud provider to host your Kubernetes cluster.
+- Ideal for applications requiring external access with automatic load balancing.
+
+### Image Example:
+![LoadBalancer](images/loadbalancer-example.png)
+
+---
+
+## Summary
+
+- **ClusterIP**: Used for private communication within the cluster.
+- **NodePort**: Exposes services to the outside world using a static port on each node.
+- **LoadBalancer**: Exposes services externally with a cloud-based load balancer for automatic traffic distribution.
+
+---
+
+Feel free to refer to this document for a better understanding of Kubernetes service types!
