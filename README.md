@@ -16,7 +16,7 @@ This document explains the differences between **Container**, **Pod**, and **Dep
 | **Lifecycle**            | Container lifecycle is tied to the Pod it runs in.               | A Pod's lifecycle is tied to the containers within it.               | A Deployment's lifecycle ensures the Pods are in the desired state.      |
 | **Update Strategy**      | No built-in update strategy.                                    | Updates need to be managed manually (e.g., replacing Pods).           | Supports rolling updates to minimize downtime during application changes. |
 
-# Kubernetes: Deployment vs ReplicaSet
+# Kubernetes Concepts: Deployment vs ReplicaSet
 
 | **Aspect**                | **Deployment**                                                                                                   | **ReplicaSet**                                                                                                    |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
