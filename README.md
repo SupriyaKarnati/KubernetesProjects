@@ -67,7 +67,7 @@ This document explains the different types of Kubernetes services, their usage, 
 - Useful for custom load balancing or environments not fully supported by Kubernetes.
 
 ### Image Example:
-![NodePort](images/nodeport-example.png)
+![NodePort](https://github.com/SupriyaKarnati/KubernetesProjects/blob/main/NodePort.png?raw=true)
 
 ---
 
@@ -86,7 +86,7 @@ This document explains the different types of Kubernetes services, their usage, 
 - Ideal for applications requiring external access with automatic load balancing.
 
 ### Image Example:
-![LoadBalancer](images/loadbalancer-example.png)
+![LoadBalancer](https://github.com/SupriyaKarnati/KubernetesProjects/blob/main/LoadBalancer.png?raw=true)
 
 ---
 
