@@ -115,6 +115,6 @@ kubectl get deployment -n kube-system aws-load-balancer-controller
 
 # Final Application
 
-![LoadBalancer]
+![Astrology Application](https://github.com/SupriyaKarnati/KubernetesProjects/blob/main/AstrologyApplication/FinalApplication.png?raw=true)
 
 
