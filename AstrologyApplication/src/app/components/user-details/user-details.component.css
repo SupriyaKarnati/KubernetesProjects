@@ -1,0 +1,119 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+    margin-top: -15vh;
+  }
+  .dec{
+    border-radius: 10px;
+  box-shadow: 0 0 25px bisque;
+   transition: 0.5s; font-weight: bold;
+  }
+  p{
+    border-radius: 10px;
+  box-shadow: 0 0 15px bisque;
+   transition: 0.5s; font-weight: bold;
+   color: antiquewhite;
+  }
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+  } 
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+  
+  button {
+    margin-top: 20px 0;
+    
+  }
+  button {
+    color: black;
+    font-weight:bold;
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+   background-color:darksalmon;
+   border: none;
+   border-radius: 10px;
+  box-shadow: 0 0 25px bisque;
+  transition: 0.5s;
+  }
+ /* ---------------------------*/
+ .date-time-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .date-picker, .time-picker {
+    margin: 10px;
+    position: relative;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(-10px);
+  }
+  
+  .date-picker:focus-within, .time-picker:focus-within {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .text-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Optional: limit the form width */
+    margin: auto;
+  }
+  .submission-message {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .submission-message h2 {
+    margin-bottom: 10px;
+  }
+  
+  .submission-message p {
+    margin-bottom: 20px;
+  }
+  
+  .submission-message button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    transition: transform 0.2s;
+  }
+  
+  .submission-message button:hover {
+    transform: scale(1.05);
+  }
+  
+  
+ 

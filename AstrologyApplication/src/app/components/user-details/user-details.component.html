@@ -1,0 +1,83 @@
+<div *ngIf="!submitted">
+<div *ngIf="currentStep === 1" class="form-container">
+    <h2>Gender</h2>
+    <form (ngSubmit)="nextStep()">
+      <div class="img" class="form-content">
+        <img src="assets/images/malefemale.png"/>
+      </div>
+        <div class="button-container">
+        <button (click)="selectOption('Male')" style="background-color:rgb(32, 155, 216); box-shadow: 0 0 5px rgb(32, 155, 216),
+    0 0 25px rgb(32, 155, 216), 0 0 50px rgb(32, 155, 216);" type="submit">Male</button>
+        &nbsp;
+        <button (click)="selectOption('Female')" style="background-color:rgb(246, 19, 234);box-shadow: 0 0 5px rgb(246, 19, 234),
+    0 0 25px rgb(246, 19, 234), 0 0 50px rgb(246, 19, 234);" type="submit">Female</button>
+      </div>
+    </form>
+  </div>
+  
+  <div *ngIf="currentStep === 2" class="form-container">
+    <h2>Date and Time of Birth</h2>
+    <form (ngSubmit)="nextStep()">
+      <!--<label for="street">Street:</label>
+      <input id="street" [(ngModel)]="formData.street" name="street" required>
+      <label for="city">City:</label>
+      <input id="city" [(ngModel)]="formData.city" name="city" required>
+      <label for="postalCode">Postal Code:</label>
+      <input id="postalCode" [(ngModel)]="formData.postalCode" name="postalCode" required>-->
+      <div class="date-time-picker" class="form-content">
+        <div class="date-picker" >
+          <input type="date" [(ngModel)]="formData.selectedDate" (change)="onDateChange($event)" required class="dec">
+        </div>
+        <div class="time-picker">
+          <input type="time" [(ngModel)]="formData.selectedTime" (change)="onDateChange($event)" required class="dec">
+        </div>
+        &nbsp;
+      <div><button type="button" (click)="previousStep()">Back</button>
+        &nbsp;
+      <button type="submit">Next</button></div>
+    </div>
+    </form>
+  </div>
+  <div *ngIf="currentStep === 3" class="form-container">
+    <h2>Personal Information</h2>
+    <form (ngSubmit)="nextStep()" class="text-form">
+      <div class="button-container">
+      <label for="firstName" style="color: antiquewhite;">First Name:</label>
+      <input id="firstName" [(ngModel)]="formData.firstName" name="firstName" required class="dec">
+    </div>
+    <div class="button-container">
+      <label for="lastName" style="color: antiquewhite;">Last Name:</label>
+      <input id="lastName" [(ngModel)]="formData.lastName" name="lastName" required class="dec">
+    </div>
+    <div class="button-container">
+      <label for="email" style="color: antiquewhite;">Email:</label>
+      <input id="email" [(ngModel)]="formData.email" name="lastName" required class="dec">
+    </div>
+    &nbsp;
+    <div><button type="button" (click)="previousStep()">Back</button>
+      &nbsp;
+    <button type="submit">Next</button></div>
+    </form>
+  </div>
+  <div *ngIf="currentStep === 4" class="form-container">
+    <h2>Confirmation</h2>
+    <div class="p">
+    <p><strong>First Name:</strong> {{ formData.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ formData.lastName }}</p>
+    <p><strong>Email:</strong> {{ formData.email }}</p>
+    <p><strong>Gender:</strong> {{ formData.gender }}</p>
+    <!--<p><strong>Date of Birth:</strong> {{ formData.selectedDate }}</p>
+    <p><strong>Time of Birth:</strong> {{ formData.selectedTime }}</p>-->
+    &nbsp;
+  </div>
+    <div><button type="button" (click)="previousStep()">Back</button>
+      &nbsp;
+    <button type="button" (click)="submit()">Submit</button></div>
+  </div>
+</div>
+  <div *ngIf="submitted" class="submission-message">
+    <h2>Thank you for your submission!</h2>
+    <p>Your information has been submitted successfully we will contact you via mail.</p>
+    <button (click)="resetForm()" routerLink="/maincontent">Back to main Screen</button>
+  </div>
+  

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Talks</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: black;
+        }
+        .slider-main {
+            position: relative;
+            z-index: 1; /* Ensure content is above the video */
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .heading-style-2 {
+            margin: 0 0 10px;
+        }
+        .slider-content-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .slider-contents div {
+            margin-bottom: 20px;
+        }
+        .slider-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .slider-image, .slider-image1 {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section class="slider-main">
+      <div class="video-container">
+        <video autoplay muted loop class="video-background">
+          <source src="assets/images/121799-724719792_small.mp4"  type="video/mp4">
+          <!-- Additional video sources if necessary -->
+        </video>
+      </div>
+
+        <div class="container">
+            <div class="logo">
+                <h3 class="heading-style-2"></h3>
+            </div>
+            <div class="slider-content-wrap">
+                <div class="slider-contents">
+                    <div>
+                        <a  routerLink="/horoscope/1">
+                        <h2 class="heading-style-2">Aries</h2>
+                        <p>Aries are known for their boldness, energy, and pioneering spirit.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/2">
+                        <h2 class="heading-style-2">Taurus</h2>
+                        <p>Taurus individuals are reliable, patient, and enjoy the finer things in life.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/3">
+                        <h2 class="heading-style-2">Gemini</h2>
+                        <p>Geminis are versatile, curious, and often have a dual nature.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/4">
+                        <h2 class="heading-style-2">Cancer</h2>
+                        <p>Cancers are nurturing, intuitive, and deeply connected to their home and family.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/5">
+                        <h2 class="heading-style-2">Leo</h2>
+                        <p>Leos are confident, charismatic, and love to be in the spotlight.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/6">
+                        <h2 class="heading-style-2">Virgo</h2>
+                        <p>Virgos are analytical, detail-oriented, and always strive for perfection.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/7">
+                        <h2 class="heading-style-2">Libra</h2>
+                        <p>Libras are diplomatic, charming, and have a strong sense of justice.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/8">
+                        <h2 class="heading-style-2">Scorpio</h2>
+                        <p>Scorpios are intense, passionate, and often mysterious.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/9">
+                        <h2 class="heading-style-2">Sagittarius</h2>
+                        <p>Sagittarians are adventurous, optimistic, and love exploring new horizons.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/10">
+                        <h2 class="heading-style-2">Capricorn</h2>
+                        <p>Capricorns are disciplined, ambitious, and have a strong sense of responsibility.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/11">
+                        <h2 class="heading-style-2">Aquarius</h2>
+                        <p>Aquarians are innovative, independent, and often ahead of their time.</p>
+                    </a>
+                    </div>
+                    <div>
+                        <a  routerLink="/horoscope/12">
+                        <h2 class="heading-style-2">Pisces</h2>
+                        <p>Pisces are empathetic, artistic, and deeply in tune with their emotions.</p>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-images">
+            <img class="slider-image" src="./assets/images/aries.png" alt="Aries"class="circle-image" >
+            <img class="slider-image" src="./assets/images/Taurus.jpg" alt="Taurus"class="circle-image" >
+            <img class="slider-image" src="./assets/images/Gemini.jpg" alt="Gemini" class="circle-image">
+            <img class="slider-image" src="./assets/images/cancer.jpg" alt="Cancer" class="circle-image" >
+            <img class="slider-image" src="./assets/images/leo.jpg" alt="Leo" class="circle-image" >
+            <img class="slider-image1" src="./assets/images/virgo.jpg" alt="Virgo" class="circle-image" >
+            <img class="slider-image" src="./assets/images/libra2.jpg" alt="Libra" class="circle-image" >
+            <img class="slider-image" src="./assets/images/scorpio1.jpg" alt="Scorpio" class="circle-image" >
+            <img class="slider-image1" src="./assets/images/sagittarius.jpg" alt="Sagittarius" class="circle-image" >
+            <img class="slider-image1" src="./assets/images/capricorn.jpg" alt="Capricorn" class="circle-image" >
+            <img class="slider-image1" src="./assets/images/aquarius.jpg" alt="Aquarius" class="circle-image" >
+            <img class="slider-image" src="./assets/images/pisces.jpg" alt="Pisces" class="circle-image" >
+        </div>
+    </section>
+</body>
+</html>

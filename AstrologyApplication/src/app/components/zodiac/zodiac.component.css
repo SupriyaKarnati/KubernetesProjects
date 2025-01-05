@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  padding-right: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #191629;
+}
+
+:host {
+    display: block;
+  }
+  
+  .card {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.5s, height 0.5s;
+  }
+  
+  .card:hover {
+    width: 600px;
+  }
+  
+  .card .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card .circle::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -5px;
+    right: 2px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: #191919;
+    border: 8px solid var(--clr);
+    filter: drop-shadow(0 0 10px var(--clr)) drop-shadow(0 0 20px var(--clr));
+    transition: all 0.5s;
+  }
+  
+  .card:hover .circle::before {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: var(--clr);
+  }
+  
+  .card .circle .logo {
+    /*position:absolute;
+    width: 250px;
+    height: auto;
+    
+    transition: transform 0.5s;*/
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 75%;
+    height: auto;
+  }
+  
+  
+  .card:hover .circle .logo {
+    transform: scale(0);
+  }
+  
+  .card .product_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(100deg);
+    height: 300px;
+    filter: drop-shadow(4px 4px 6px #f1faee);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .card:hover .product_img {
+    top: 25%;
+    left: 72%;
+    transform: translate(-30%, -65%) scale(1) rotate(-15deg);
+  }
+  
+  .card .content {
+    position: absolute;
+    width: 50%;
+    left: 20%;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+    visibility: hidden;
+  }
+  
+  .card:hover .content {
+    opacity: 1;
+    visibility: visible;
+    left: 20px;
+  }
+  
+  .card .content h2 {
+    color: #191919;
+    font-family: "Times New Roman", Times, serif;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    line-height: 1em;
+  }
+  
+  .card .content p {
+    color: #191919;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .card .content a {
+    color: #111;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    filter: drop-shadow(1px 1px 6px #f1faee);
+  }
+  .error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Full screen height */
+    text-align: center;
+  }
+  
+  .error-message h2 {
+    color: red;
+  }
+  
+  .error-message button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  
