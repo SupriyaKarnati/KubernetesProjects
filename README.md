@@ -135,4 +135,54 @@ This document explains the different types of Kubernetes services, their usage, 
 ![LoadBalancer](https://github.com/SupriyaKarnati/KubernetesProjects/blob/main/LoadBalancer.png?raw=true)
 
 ---
+# Ingress in Kubernetes
+
+## What is Ingress?
+
+In Kubernetes, **Ingress** is a way to manage access to your applications from outside the Kubernetes cluster. It controls how external traffic (like users visiting your website) can reach your services inside the cluster. Ingress makes it easier to expose multiple services using just **one** entry point instead of creating separate URLs for each service.
+
+### Why is Ingress Needed?
+
+#### 1. **Manage Traffic Easily**
+
+Without Ingress, each service would need its own external endpoint (e.g., IP address or port). This can become messy. Ingress gives you a **single entry point** for all your services, simplifying traffic management.
+
+#### 2. **Route Traffic Based on URL**
+
+You can tell Ingress to send traffic to different services based on the URL path. For example:
+- Requests to `example.com/service1` go to **Service 1**
+- Requests to `example.com/service2` go to **Service 2**
+
+#### 3. **SSL/TLS (HTTPS) Encryption**
+
+Ingress can handle HTTPS traffic (secure communication). This means all the traffic to your website can be encrypted (HTTPS), improving security. Ingress manages the certificates, so you don't have to do it for each individual service.
+
+#### 4. **Load Balancing**
+
+Ingress can balance traffic between different servers or containers running the same service. This helps your app handle more visitors and stay available if one server fails.
+
+#### 5. **Security Features**
+
+You can use Ingress to protect your services. For example, you can set up basic authentication, block traffic from certain IP addresses, or limit the number of requests a user can make.
+
+#### 6. **Save Costs**
+
+By using one entry point for multiple services, you reduce the number of public IP addresses or load balancers you need, saving resources and money.
+
+## Difference Between Ingress, Ingress Service, and Ingress Controller
+
+### 1. **Ingress**
+
+- **What it is**: An **Ingress** is an API object in Kubernetes that defines how external traffic should reach the services inside the cluster. It contains the rules that define the routing logic based on things like hostname and URL path.
+- **What it does**: It controls the flow of external requests to various services inside the Kubernetes cluster, typically using HTTP/HTTPS.
+
+### 2. **Ingress Service**
+
+- **What it is**: There isn't really a "Ingress Service" as a separate entity. However, the **Ingress** resource often references services inside the cluster (which can be a regular Kubernetes Service).
+- **What it does**: When defining routing rules in an Ingress, you direct traffic to specific Kubernetes Services. A Service in Kubernetes exposes a set of pods, and the Ingress routes traffic to those Services based on the rules you define.
+
+### 3. **Ingress Controller**
+
+- **What it is**: An **Ingress Controller** is a piece of software that reads the Ingress resources in your cluster and actually implements the routing logic. It listens for incoming HTTP/HTTPS requests and forwards them to the appropriate service as defined in the Ingress.
+- **What it does**: The Ingress Controller is responsible for processing the rules specified in Ingress resources and managing the traffic flow. It works as a load balancer and traffic manager, making sure requests are routed correctly to the Services.
 
